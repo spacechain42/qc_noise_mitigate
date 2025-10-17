@@ -1,0 +1,3 @@
+[submodule "papers/qc_noise_related_works"]
+	path = papers/qc_noise_related_works
+	url = git@github.com:spacechain42/qc_noise_related_works.git

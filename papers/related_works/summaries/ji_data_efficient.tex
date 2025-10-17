@@ -1,0 +1,27 @@
+\subsection{Data-Efficient Noise Modeling}
+\label{sec:jiModeling}
+
+A procedure for optimizing manufacturer-provided noise models to active quantum computing systems is provided in Ji et al.
+This model learns parameters associated with stochastic, coherent, non-Markovian, and correlated sources for both one- and two-qubit operations. %, shown in Table \ref{tab:jiparameters}.
+Rather than starting from guessed or random noise parameters, the suggested framework starts from a reference characterization such as a vendor-calibrated baseline model.
+Due to the computational inefficiency of brute force search for optimal parameter fitting, Bayesian Optimization using a tree-structured Parzen estimator is used to tune the noise parameters.
+The cost function for training is the Hellinger distance between measured and simulated output distributions.
+% \begin{equation}
+%     \theta^* = \text{argmin}_{\theta} \left( \frac{1}{|C|} \sum_{i} H[P_i, Q_i(\theta)] \right)
+%     \label{eq:optimal_theta}
+% \end{equation}
+
+Using already existing parameters to speed up characterization reduces the time and hardware resources required to train the noise model.
+The use of reference parameters also ``allows for the continuous refinement of noise models, ensuring scalability for larger quantum circuits and processors'' \cite{ji_data-efficient_2025}.
+
+% \begin{quote}
+%     A key advantage of our approach is its efficiency and practicality.
+%     It repurposes existing benchmarking or application-specific execution data, avoiding the need for extensive characterization protocols such as quantum  process tomography.
+%     This reusability reduces experimental overhead, enabling practitioners to leverage prior executions to improve algorithm testing and error mitigation protocols.
+%     Moreover, this allows for the continuous refinement of noise models, ensuring scalability for larger quantum circuits and processors.
+%     \cite{ji_data-efficient_2025}.
+% \end{quote}
+
+
+% \input{ji_figures}
+

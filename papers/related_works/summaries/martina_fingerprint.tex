@@ -1,0 +1,9 @@
+\subsection{System Noise Fingerprinting}
+\label{sec:martinaFingerprint}
+Martina et al demonstrate that the overall noise fingerprint of a quantum computer can be used to distinguish it from other devices.
+The noise fingerprint is a time-ordered sequence of output probabilities at nine points in a specified quantum circuit.
+Repeating these circuit measurements either immediately sequential or with delay provides a characterization of how the noise fingerprint of a device evolves over time.
+This noise fingerprint is used as the input for a support vector machine (SVM) classifier with the output label of which device was used for the calculation.
+Using the trained SVM model, the seven IBM devices used for training could be distinguished with over 99\% accuracy after only three measurements.
+This ease of device differentiation based on noise fingerprint indicates that any noise modeling must be both device and time specific - any noise mitigation model for a device must be re-trained several times each day to maintain accuracy.
+\cite{martina_learning_2022}

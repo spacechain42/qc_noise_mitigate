@@ -1,0 +1,118 @@
+\documentclass[12pt, onecolumn]{IEEEtran}
+
+\input{proposal-defs-alt}
+
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{multirow}
+
+
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+
+\begin{center}
+{\large\bf Quantum Noise Reduction Methods}
+\end{center}
+
+
+\begin{center}
+% \begin{minipage}{0.32\linewidth}
+%     \begin{center}
+%     {\bf Travis Desell}\\
+%     \begin{small}
+%     Associate Professor\\
+%     Department of Software Engineering\\
+%     {\it tjdvse@rit.edu}
+%     \end{small}
+%     \end{center}
+% \end{minipage}
+% \hfill
+\begin{minipage}{0.32\linewidth}
+    \begin{center}
+    {\bf Steven Szachara}\\
+    \begin{small}
+    M.S. Data Science\\
+    Department of Software Engineering\\
+    {\it ss9270@rit.edu}
+    %\vspace{\baselineskip}
+    \end{small}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\linewidth}
+    \begin{center}
+    {\bf Alexander Jermyn}\\
+    \begin{small}
+    Student MS Data Science\\
+    Department of Something\\
+    {\it someone@rit.edu}
+    %\vspace{\baselineskip}
+    \end{small}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\linewidth}
+    \begin{center}
+    {\bf Daniel Krutz}\\
+    \begin{small}
+    Professor of Something\\
+    Department of Something\\
+    {\it someone@rit.edu}
+    %\vspace{\baselineskip}
+    \end{small}
+    \end{center}
+\end{minipage}
+\end{center}
+
+
+\IEEEpeerreviewmaketitle
+\section{Introduction}
+\label{ch:intro}
+
+\section{Background}
+\label{ch:background}
+% Introduce qiskit package
+% \input{Quantum_Overview}
+% \input{Quantum_Simulation}
+
+\section{Related Works}
+\label{ch:works}
+\input{overview_tab}
+
+% \subsection{Category/title}
+% \label{sec:category}
+
+%steven's proposed breakdown of the related works section, to compact this more, instead of summaries of individual articles, (look at example structure Dr. Desell provided)
+
+%\input{AI-ML-Quantum}
+\input{summaries/feng_principles}
+
+\input{summaries/ji_data_efficient} % noise parameter modeling
+\input{summaries/martina_fingerprint} % device dependence of noise profile
+% \input{summaries/vadali_fidelity} % circuit fidelity estimation
+\input{summaries/liao_mitigation} % direct ML mitigation of noise
+% \input{summaries/wise_deep_learn}
+
+\section{Conclusion}
+\label{ch:conclusion}
+
+\bibliographystyle{IEEEtran.bst}
+\bibliography{./references.bib}
+
+
+\end{document}

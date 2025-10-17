@@ -1,0 +1,119 @@
+\documentclass[12pt]{article} 
+% \input{proposal_defs}
+% \usepackage{url}
+% \usepackage{latexsym}
+% \usepackage{eepic,color,bm,array,amsmath}
+\usepackage{amsmath}
+\usepackage{biblatex}
+% \usepackage{enumitem}
+\usepackage{graphicx}
+
+\bibliography{quantum}
+
+% Custom tight list environments
+\newenvironment{tightitemize}{
+  \begin{itemize}\setlength\itemsep{0pt}\setlength\parskip{0pt}\setlength\parsep{0pt}}
+  {\end{itemize}}
+\newenvironment{tightenumerate}{
+  \begin{enumerate}\setlength\itemsep{0pt}\setlength\parskip{0pt}\setlength\parsep{0pt}}
+  {\end{enumerate}}
+
+% Title section
+\title{Context-Aware Quantum Noise Mitigation Model Selection}
+\author{Alexander Jermyn}
+
+
+\begin{document}
+
+\pagestyle{empty}
+
+% Title
+\begin{center}
+{\large\bf Context-Aware Quantum Noise Mitigation}
+\end{center}
+
+% Authors
+\begin{center}
+    % \begin{minipage}{0.45\linewidth}
+    %     \begin{center}
+    %     {\bf Dr. Dan Krutz}\\
+    %     \begin{small}
+    %     Associate Professor\\
+    %     Department of Software Engineering\\
+    %     {\it dxkvse@rit.edu}
+    %     \end{small}
+    %     \end{center}
+    % \end{minipage}
+    \begin{minipage}{0.48\linewidth}
+        \begin{center}
+        {\bf Alexander Jermyn}\\
+        \begin{small}
+        Student, M.S. Data Science\\
+        {\it aj1116@rit.edu}
+        \end{small}
+        \end{center}
+    \end{minipage}
+\end{center}
+
+% \maketitle
+
+% =========================
+\subsection*{Background}
+ 
+The goal of this project is to design and evaluate a framework for adaptive quantum error management that uses Bayesian clustering to inform post-processing error mitigation strategies based on identified noise profiles.
+I aim to:
+\begin{tightitemize}
+    \item Improve reliability of quantum computations by dynamically applying the most effective error correction strategy.
+    \item Maintain or improve resource usage and fidelity (shots, qubits, calibration overhead).
+    \item Benchmark against non-mitigated output, individual state-of-the-art mitigation approaches such as Zero-Noise Extrapolation (ZNE), Measurement Error Mitigation (MEM), and Probabilistic Error Cancellation (PEC).  % Add performance metric used for comparison
+\end{tightitemize}
+
+% =========================
+\subsection*{Related Works}
+The challenge lies in adaptively managing quantum errors that either performs the same as current error-mitigation strategies, or better, while reducing computational resources. 
+% With a plethora of existing solutions that focus on real-time correction, post-processing, and contextual awareness, our novel approach combines these into one architecture, to tackle this problem wholistically.
+Our project tackles a novel integration problem: balancing fidelity, latency, and efficiency in a unified framework.
+This framework will combine real-time noise forecasting (Deep Learning informed QEC error mitigation) with post-process noise fingerprinting (VBC informed decision making for PEC, ZNE, or MEM implementation).
+Success will demonstrate the feasibility of intelligent, adaptive error management for Noisy Intermediate-Scale Quantum (NISQ) devices, an open question at the cutting edge of applied data science and quantum computing.
+
+% =========================
+\subsection*{Evaluation Plan}
+
+Current error-mitigation techniques improve performance metrics such as circuit fidelity, success probability of achieving correct output distributions, and logical error rates.
+However, these are costly in terms of both quantum and classical computational overhead, the number of additional quantum circuit executions (“shots”), and the increased resource requirements such as qubits, and calibration runs. 
+These methods also lack flexibility, since they are typically applied uniformly across all runs rather than adapting selectively to contextual information or predicted noise conditions.
+This architecture would continuously model the system noise profile, allowing for the application of only relevant noise mitigation strategies.
+Selective noise mitigation application will reduce the required computational overhead and resource requirements while maintaining the fidelity of resulting calculations.
+Given that quantum computing stands to be the next major evolution of computing, our approach with a combined architecture tackles the computational reliability and resource requirement hurdle, expanding upon current capabilities, moving the field forward.
+
+% =========================
+\subsection*{Implementation Plan}
+\textbf{Goal:} Implement noise fingerprinting through VBC and selection of appropriate post-process mitigation methods.
+
+\vspace{0.5em}
+\noindent\textbf{Tasks:} Post-Processing error mitigation
+\begin{tightitemize}% [nosep, leftmargin=2em]
+    \item Identify/clean dataset of quantum simulation outputs with noise source labeling.
+    \item Implement Variational Bayesian Clustering (VBC) for latent context grouping.
+    \item Integrate post-processing strategies (PEC, ZNE, MEM) based on modeled noise profile.
+    \item Validate clustering and forecasting performance on simulated datasets.
+\end{tightitemize}
+
+
+
+% =========================
+%%\subsection*{Success Criteria}
+%%The project will be considered successful if:  
+%%\begin{tightitemize}
+    %\item Reliability (success rate, fidelity) matches or exceeds state-of-the-art single-method baselines.  
+    %\item Latency (time-to-success) is reduced.  
+    %\item Efficiency (shots, qubits, calibration overhead) is maintained or lowered.  
+    %\item The framework demonstrates robustness across multiple workloads (VQE, QAOA, RB).  
+%%\end{tightitemize}
+
+\vspace{1em}
+% \begin{thebibliography}{9}
+% \bibitem{belliardo2025} F. Belliardo, E. M. Gauger, T. H. Taminiau, Y. Altmann, and C. Bonato, ``A multi-dimensional quantum estimation and model learning framework based on variational Bayesian inference,'' arXiv:2507.23130, 2025. https://doi.org/10.48550/arXiv.2507.23130
+% \end{thebibliography}
+
+\end{document}
